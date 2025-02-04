@@ -173,7 +173,7 @@ Once approved, your salary next month will be **${TOTAL_SALARY} SAR**, including
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/chat/", {
+      const response = await axios.post("https://deepseek-test-backend.onrender.com/chat/", {
         thread_id: threadId,
         messages: transformToBackendMessageFormat([...messages, userMessage]),
       });
@@ -268,7 +268,7 @@ Once approved, your salary next month will be **${TOTAL_SALARY} SAR**, including
     try {
       const conversationUpToUser = messages.slice(0, userMsgIndex + 1);
 
-      const response = await axios.post("http://localhost:8000/chat/", {
+      const response = await axios.post("https://deepseek-test-backend.onrender.com/chat/", {
         thread_id: threadId,
         messages: transformToBackendMessageFormat(conversationUpToUser),
       });
